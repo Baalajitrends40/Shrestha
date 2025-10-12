@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About Us — YourStore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="about.css"> -->
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#ff6b6b; --muted:#94a3b8; --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; font-family:Inter,system-ui,Arial; color:#e6eef8; background: linear-gradient(180deg,#071029 0%, #081827 60%); -webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ffa94d);display:flex;align-items:center;justify-content:center;font-weight:800;color:#081827}
+    nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:40px 0}
+    .hero-card{background:linear-gradient(180deg,var(--glass),transparent);border-radius:18px;padding:28px;box-shadow:0 8px 30px rgba(2,6,23,0.7);backdrop-filter: blur(6px);border:1px solid rgba(255,255,255,0.03)}
+    h1{font-size:34px;margin:0 0 12px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .cta{display:inline-block;padding:12px 18px;border-radius:12px;background:linear-gradient(90deg,var(--accent),#ff9f43);color:#081827;font-weight:700;text-decoration:none}
+
+    /* Animated badges */
+    .badges{display:flex;gap:12px;margin-top:14px}
+    .badge{padding:8px 12px;border-radius:999px;background:var(--glass-2);font-weight:700;color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+
+    /* Story timeline */
+    .timeline{margin-top:26px;display:flex;flex-direction:column;gap:14px}
+    .step{display:flex;gap:16px;align-items:flex-start}
+    .step .dot{width:14px;height:14px;border-radius:50%;background:var(--accent);flex:0 0 14px;box-shadow:0 6px 18px rgba(255,107,107,0.12)}
+    .step .text{color:var(--muted)}
+
+    /* Stats */
+    .stats{display:flex;gap:12px;margin-top:20px}
+    .stat{flex:1;background:linear-gradient(180deg,var(--card),transparent);padding:18px;border-radius:14px;text-align:center;border:1px solid rgba(255,255,255,0.03)}
+    .stat h3{font-size:22px;margin:0}
+    .stat p{margin:8px 0 0;color:var(--muted)}
+
+    /* Testimonials */
+    .testimonials{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .testimonial{padding:16px;border-radius:12px;background:var(--glass-2);border:1px solid rgba(255,255,255,0.02);min-height:120px}
+    .testimonial p{color:var(--muted);margin:8px 0 0}
+
+    /* Team + CTA */
+    .team{display:flex;gap:12px;align-items:center;margin-top:22px}
+    .avatar{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#ffd6a5,#ff6b6b);display:flex;align-items:center;justify-content:center;font-weight:700;color:#081827}
+
+    footer{margin-top:40px;padding:20px 0;color:var(--muted);text-align:center}
+
+    /* animations */
+    .float{animation:float 6s ease-in-out infinite}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+
+    .reveal{opacity:0;transform:translateY(12px);transition:all 700ms cubic-bezier(.2,.9,.3,1)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* responsive */
+    @media (max-width:980px){.hero{grid-template-columns:1fr;}.testimonials{grid-template-columns:1fr}.team{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">SA</div>
+        <div>
+          <div style="font-weight:800">SHRESTHA</div>
+          <div style="font-size:12px;color:var(--muted)">Smart. Local. Trusted.</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+      
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card reveal" id="heroCard">
+        <h1>We started small on WhatsApp — now we're fully digital.</h1>
+        <p class="lead">What began as a friendly WhatsApp shop grew into a full ecommerce experience. Happy customers, quick responses, and a repeat-rate that keeps us improving every day.</p>
+        <a class="cta" href="#contact">Get In Touch</a>
+
+        <div class="badges">
+          <div class="badge">Trusted</div>
+          <div class="badge">40% repeat customers</div>
+          <div class="badge">1000+ happy coustomers</div>
+        </div>
+
+        <div class="timeline" aria-hidden="true">
+          <div class="step">
+            <div class="dot"></div>
+            <div>
+              <strong>WhatsApp storefront</strong>
+              <div class="text">We began by taking orders over WhatsApp and building trust one customer at a time.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="dot"></div>
+            <div>
+              <strong>Local favourites</strong>
+              <div class="text">Positive word-of-mouth led to repeat buyers and steady growth.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="dot"></div>
+            <div>
+              <strong>Full ecommerce launch</strong>
+              <div class="text">Now we ship across the region with a secure, friendly online experience.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="hero-card float reveal">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-size:13px;color:var(--muted)">Customer Repeat Rate</div>
+              <h2 id="counter">0%</h2>
+            </div>
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L15 8H9L12 2Z" fill="#ffb4a2" opacity="0.9"></path><path d="M12 22L9 16H15L12 22Z" fill="#ffd6a5" opacity="0.9"></path></svg>
+          </div>
+
+          <div style="background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)">
+            <strong>Why customers come back</strong>
+            <ul style="margin:8px 0 0;color:var(--muted);padding-left:18px">
+              <li>Quick WhatsApp-style support</li>
+              <li>Trusted local delivery partners</li>
+              <li>Curated product selection</li>
+            </ul>
+          </div>
+
+          <div style="font-size:12px;color:var(--muted);text-align:center;padding-top:6px">Built with ❤️ from a small team</div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="stats" class="reveal">
+      <div class="stats">
+        <div class="stat">
+          <h3>1,200+</h3>
+          <p>Orders delivered</p>
+        </div>
+        <div class="stat">
+          <h3>40%</h3>
+          <p>Repeat customers</p>
+        </div>
+        <div class="stat">
+          <h3>4.8/5</h3>
+          <p>Average rating</p>
+        </div>
+      </div>
+
+      <div class="testimonials">
+        <div class="testimonial reveal">
+          <strong>Riya S.</strong>
+          <p>"Fast delivery and great service — I recommend them to everyone!"</p>
+        </div>
+        <div class="testimonial reveal">
+          <strong>Arun K.</strong>
+          <p>"I started ordering through WhatsApp and now use the website all the time."</p>
+        </div>
+        <div class="testimonial reveal">
+          <strong>Priya M.</strong>
+          <p>"Products as described, friendly support. Big thumbs up."</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="reveal">
+      <h2 style="margin-top:26px">Our Team</h2>
+      <div class="team">
+        <div class="avatar">SA</div>
+        <div>
+          <strong>SHRESTHA</strong>
+          <div style="color:var(--muted)">Founder — BAALAJI-TRENDS</div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px">
+        <p style="color:var(--muted)">We're a small team focused on making shopping simple and reliable. We began by answering customer questions on WhatsApp, and that personal touch is still at the heart of everything we do.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <h2 style="margin-top:26px">Get in touch</h2>
+      <p style="color:var(--muted)">Have a question or want help with an order? Message us on WhatsApp or send an email — we'll get back quickly.</p>
+      <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+        <a class="cta" href="mailto:baaljitrends@gmail.com">Email Us</a>
+        <a class="cta" href="https://t.me/shresthabaalaji">Telegram</a>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> YourStore — Built with care. <span style="display:block;color:var(--muted);font-size:13px">Made the WhatsApp way; scaled for the web.</span>
+    </footer>
+
+  </div>
+
+  <script>
+    // small utilities: reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    function onScroll(){
+      for(const r of reveals){
+        const rect = r.getBoundingClientRect();
+        if(rect.top < (window.innerHeight - 80)) r.classList.add('visible');
+      }
+    }
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('load', ()=>{onScroll();document.getElementById('year').textContent = new Date().getFullYear();});
+
+    // counter animation to 40
+    function animateCounter(id, to, duration){
+      const el = document.getElementById(id);
+      let start = 0; const startTime = performance.now();
+      function step(now){
+        const t = Math.min(1, (now - startTime)/duration);
+        const val = Math.floor(t * (to - start) + start);
+        el.textContent = val + '%';
+        if(t < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    // trigger when visible
+    const counter = document.getElementById('counter');
+    let counterStarted = false;
+    function checkCounter(){
+      const rect = counter.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 40 && !counterStarted){
+        counterStarted = true; animateCounter('counter', 40, 1400);
+      }
+    }
+    window.addEventListener('scroll', checkCounter);
+    window.addEventListener('load', checkCounter);
+  </script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Your Fashion Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    /* Carousel container */
+    .carousel {
+        position: absolute;
+        top:0; left:0; width:100%; height:100%;
+        display: flex;
+        animation: slide 30s linear infinite;
+        z-index: 0;
+    }
+
+    .carousel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        flex-shrink: 0;
+        opacity: 0.8;
+        transition: opacity 0.5s;
+    }
+
+    @keyframes slide {
+        0% { transform: translateX(0%); }
+        20% { transform: translateX(0%); }
+        25% { transform: translateX(-100%); }
+        45% { transform: translateX(-100%); }
+        50% { transform: translateX(-200%); }
+        70% { transform: translateX(-200%); }
+        75% { transform: translateX(-300%); }
+        95% { transform: translateX(-300%); }
+        100% { transform: translateX(0%); }
+    }
+
+    body::after {
+        content: '';
+        position: absolute;
+        top:0; left:0; right:0; bottom:0;
+        background-color: rgba(0,0,0,0.45);
+        z-index: 1;
+    }
+
+    /* Floating clothing icons */
+    .floating-icon {
+        position: absolute;
+        opacity: 0.7;
+        animation: float 6s ease-in-out infinite;
+        z-index: 2;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(10deg); }
+        100% { transform: translateY(0) rotate(0deg); }
+    }
+
+    .login-container {
+        position: relative;
+        z-index: 3;
+        background: rgba(255,255,255,0.95);
+        padding: 50px 35px;
+        border-radius: 20px;
+        border: 3px solid;
+        border-image-slice: 1;
+        border-width: 3px;
+        border-image-source: linear-gradient(45deg, #ff6a95, #ff416c);
+        box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+        animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from {opacity:0; transform: translateY(-30px);}
+        to {opacity:1; transform: translateY(0);}
+    }
+
+    .company-name {
+        font-size: 34px;
+        font-weight: 600;
+        margin-bottom: 30px;
+        background: linear-gradient(90deg, #ff6a95, #ff416c, #ff6a95);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes shimmer {
+        0% { background-position: -300px 0; }
+        100% { background-position: 300px 0; }
+    }
+
+    .input-wrapper {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .input-wrapper i {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        color: #ff416c;
+        font-size: 18px;
+    }
+
+    input[type="tel"] {
+        width: 100%;
+        padding: 14px 14px 14px 40px;
+        border-radius: 12px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+        transition: all 0.3s;
+    }
+
+    input[type="tel"]:focus {
+        border-color: #ff416c;
+        box-shadow: 0 0 10px rgba(255,65,108,0.3);
+        outline: none;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(45deg, #ff6a95, #ff416c);
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0 5px 15px rgba(255,65,108,0.4);
+        animation: bounce 2s infinite;
+    }
+
+    button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(255,65,108,0.6);
+        background: linear-gradient(45deg, #ff416c, #ff6a95);
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+    }
+
+    .skip {
+        background-color: transparent;
+        color: white;
+        font-size: 16px;
+        margin-top: 15px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .skip:hover {
+        text-decoration: underline;
+        color: #ff6a95;
+    }
+
+    @media (max-width: 480px) {
+        .login-container {
+            padding: 35px 20px;
+        }
+        .company-name {
+            font-size: 28px;
+        }
+    }
+</style>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Carousel images -->
+<div class="carousel">
+    <img src="images/cat-item1.jpg" alt="Fashion 1">
+    <img src="images/banner-image-2.jpg" alt="Fashion 2">
+    <img src="images/banner-image-6.jpg" alt="Fashion 3">
+    <img src="images/banner-image-6.jpg" alt="Fashion 4">
+</div>
+
+<!-- Floating clothing icons -->
+<img src="https://cdn-icons-png.flaticon.com/512/892/892458.png" class="floating-icon" style="top: 20%; left: 5%; width: 45px;">
+<img src="https://cdn-icons-png.flaticon.com/512/892/892477.png" class="floating-icon" style="top: 60%; left: 80%; width: 40px;">
+<img src="https://cdn-icons-png.flaticon.com/512/892/892464.png" class="floating-icon" style="top: 35%; left: 50%; width: 50px;">
+<img src="https://cdn-icons-png.flaticon.com/512/892/892463.png" class="floating-icon" style="top: 10%; left: 70%; width: 40px;">
+<img src="https://cdn-icons-png.flaticon.com/512/892/892456.png" class="floating-icon" style="top: 75%; left: 15%; width: 45px;">
+
+<div class="login-container">
+    <div class="company-name">SHRESTHA</div>
+    <div class="input-wrapper">
+        <i class="fas fa-phone-alt"></i>
+        <input type="tel" id="mobile" placeholder="Enter Mobile Number">
+    </div>
+    <button onclick="login()">Login</button>
+    <button class="skip" onclick="skipLogin()">Skip</button>
+</div>
+
+<script>
+    function login() {
+        const mobile = document.getElementById('mobile').value;
+        if(mobile.trim() === '') {
+            alert('Please enter your mobile number');
+            return;
+        }
+        window.location.href = 'index.html';
+    }
+
+    function skipLogin() {
+        window.location.href = 'index.html';
+    }
+</script>
+
+</body>
+</html>

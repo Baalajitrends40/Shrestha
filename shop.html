@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header> 
+    <h1>Shop</h1>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
+    </div>
+  </header>
+
+  <div class="container" id="productContainer">
+
+    <!-- Example Products -->
+    <div class="product-card" 
+         data-name="uday, hi, aswani today pajamas "
+         data-img="images/banner-image-1.jpg"
+         data-desc="High-quality wireless earbuds with noise cancellation and 24-hour battery life."
+         data-link="https://docs.google.com/forms/d/e/1FAIpQLSdpVQN0gTSOXonxqvrV7ClVrvWpLIqMOotTHNN9Rs5blwh6Tg/viewform?usp=pp_url&entry.1878731410=AM123456">
+      <img src="images/banner-image-1.jpg" alt="Product" class="open-popup">
+      <h3>Wireless Earbuds</h3>
+      <button class="open-popup">View Details</button>
+    </div> 
+
+    <div class="product-card"
+         data-name="Smart Watch, pure pajamas, pajamas"   
+         data-img="https://via.placeholder.com/250x150?text=Smart+Watch"
+         data-desc="Stay connected with fitness tracking, notifications, and heart rate monitor."
+         data-link="https://example.com/smartwatch">
+      <img src="https://via.placeholder.com/250x150?text=Smart+Watch" alt="Product" class="open-popup">
+      <h3>Smart Watch</h3>
+      <button class="open-popup">View Details</button>
+    </div>
+
+    <div class="product-card"
+         data-name="Bluetooth Speaker"
+         data-img="https://via.placeholder.com/250x150?text=Speaker"
+         data-desc="Portable Bluetooth speaker with deep bass and waterproof design."
+         data-link="https://docs.google.com/forms/d/e/1FAIpQLSdpVQN0gTSOXonxqvrV7ClVrvWpLIqMOotTHNN9Rs5blwh6Tg/viewform?usp=pp_url&entry.1878731410=AM123456">
+      <img src="https://via.placeholder.com/250x150?text=Speaker" alt="Product" class="open-popup">
+      <h3>Bluetooth Speaker</h3>
+      <button class="open-popup">View Details</button>
+    </div>
+
+    <div class="product-card"
+         data-name="Bluetooth Speaker"
+         data-img="https://via.placeholder.com/250x150?text=Speaker"
+         data-desc="Portable Bluetooth speaker with deep bass and waterproof design."
+         data-link="https://docs.google.com/forms/d/e/1FAIpQLSdpVQN0gTSOXonxqvrV7ClVrvWpLIqMOotTHNN9Rs5blwh6Tg/viewform?usp=pp_url&entry.1878731410=AM123456">
+      <img src="https://via.placeholder.com/250x150?text=Speaker" alt="Product" class="open-popup">
+      <h3>Bluetooth Speaker</h3>
+      <button class="open-popup">View Details</button>
+    </div>
+
+    <div class="product-card"
+         data-name="Bluetooth Speaker"
+         data-img="https://via.placeholder.com/250x150?text=Speaker"
+         data-desc="Portable Bluetooth speaker with deep bass and waterproof design."
+         data-link="https://docs.google.com/forms/d/e/1FAIpQLSdpVQN0gTSOXonxqvrV7ClVrvWpLIqMOotTHNN9Rs5blwh6Tg/viewform?usp=pp_url&entry.1878731410=AM123456">
+      <img src="https://via.placeholder.com/250x150?text=Speaker" alt="Product" class="open-popup">
+      <h3>Bluetooth Speaker</h3>
+      <button class="open-popup">View Details</button>
+    </div>
+
+    <div class="product-card"
+         data-name="Bluetooth Speaker"
+         data-img="https://via.placeholder.com/250x150?text=Speaker"
+         data-desc="Portable Bluetooth speaker with deep bass and waterproof design."
+         data-link="https://docs.google.com/forms/d/e/1FAIpQLSdpVQN0gTSOXonxqvrV7ClVrvWpLIqMOotTHNN9Rs5blwh6Tg/viewform?usp=pp_url&entry.1878731410=AM123456">
+      <img src="https://via.placeholder.com/250x150?text=Speaker" alt="Product" class="open-popup">
+      <h3>Bluetooth Speaker</h3>
+      <button class="open-popup">View Details</button>
+    </div>
+
+    <div class="product-card"
+         data-name="Bluetooth Speaker"
+         data-img="https://via.placeholder.com/250x150?text=Speaker"
+         data-desc="Portable Bluetooth speaker with deep bass and waterproof design."
+         data-link="https://docs.google.com/forms/d/e/1FAIpQLSdpVQN0gTSOXonxqvrV7ClVrvWpLIqMOotTHNN9Rs5blwh6Tg/viewform?usp=pp_url&entry.1878731410=AM123456">
+      <img src="https://via.placeholder.com/250x150?text=Speaker" alt="Product" class="open-popup">
+      <h3>Bluetooth Speaker</h3>
+      <button class="open-popup">View Details</button>
+    </div>
+
+    <div class="product-card"
+         data-name="Bluetooth Speaker"
+         data-img="https://via.placeholder.com/250x150?text=Speaker"
+         data-desc="Portable Bluetooth speaker with deep bass and waterproof design."
+         data-link="https://docs.google.com/forms/d/e/1FAIpQLSdpVQN0gTSOXonxqvrV7ClVrvWpLIqMOotTHNN9Rs5blwh6Tg/viewform?usp=pp_url&entry.1878731410=AM7890">
+      <img src="https://via.placeholder.com/250x150?text=Speaker" alt="Product" class="open-popup">
+      <h3>Bluetooth Speaker</h3>
+      <button class="open-popup">View Details</button>
+    </div>
+
+  </div>
+
+  <!-- Popup Modal -->
+  <div id="productPopup" class="popup-overlay">
+    <div class="popup-content">
+      <span class="close-btn">&times;</span>
+      <img id="popupImage" src="" alt="Product Image">
+      <h2 id="popupTitle"></h2>
+      <p id="popupDesc"></p>
+      <a id="popupBuyBtn" href="#" target="_blank" class="buy-popup-btn">Buy No</a>
+    </div>
+  </div>
+
+  <script>
+    // Search Function
+    function searchProducts() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const products = document.querySelectorAll('.product-card');
+      products.forEach(product => {
+        const name = product.getAttribute('data-name').toLowerCase();
+        product.style.display = name.includes(input) ? 'block' : 'none';
+      });
+    }
+
+    // Popup Functionality
+    const popup = document.getElementById('productPopup');
+    const closeBtn = document.querySelector('.close-btn');
+
+    document.querySelectorAll('.open-popup').forEach(element => {
+      element.addEventListener('click', (e) => {
+        const card = e.target.closest('.product-card');
+        document.getElementById('popupImage').src = card.getAttribute('data-img');
+        document.getElementById('popupTitle').textContent = card.getAttribute('data-name');
+        document.getElementById('popupDesc').textContent = card.getAttribute('data-desc');
+        document.getElementById('popupBuyBtn').href = card.getAttribute('data-link');
+        popup.style.display = 'flex';
+      });
+    });
+
+    closeBtn.onclick = () => popup.style.display = 'none';
+    window.onclick = (event) => { if (event.target === popup) popup.style.display = 'none'; };
+  </script>
+</body>
+</html>
